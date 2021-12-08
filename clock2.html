@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>CLOCK</title>
+   
+    
+     
+      <style>
+          *{
+    background: url(stretched-1366-768-221968.jpg) no-repeat center ;
+    background-size: cover;
+     z-index: 0;
+     opacity: .9;  
+}
+.container{
+    display: flex;
+    
+    margin: 22%;
+    position: relative; 
+  /*border: 2px solid red; */
+   height: 50vw;
+   width: 50vw;
+   background: url(clock.jpg) no-repeat ;
+   margin: auto auto;
+ background-size: 100%;
+ z-index: -1;
+}
+#hour,#min,#sec{
+    background: black;
+     position: absolute; 
+    border-radius: 20px;
+    transform-origin: bottom;
+  
+}
+#hour{
+    width: 12px;
+    height: 22%;
+    top: 27.32%;
+
+    left: 49.21%;
+    background: rgb(22, 22, 22);
+    opacity: 0.4;
+    
+}
+#min{
+       
+        opacity: 0.7;
+        width: 9px;
+        height: 28%;
+        top: 22.30%;
+        left: 49.34%;
+    
+    background: rgb(24, 22, 22);
+}
+#sec{
+    
+    opacity: 0.9;
+    
+    width: 5px;
+    height: 35%;
+    top: 15.4%;
+    left: 49.55%;
+    background: rgb(23, 24, 23);
+  
+}
+      </style>
+</head>
+<body>
+    <div class="container">
+        <div id="hour">
+    </div>
+        <div id="min">
+            
+        </div>
+        <div id="sec">
+
+        </div>
+    </div>
+    <script>
+        setInterval(() => {
+     d=new Date ();
+    h=d.getHours();
+    m=d.getMinutes();
+    s=d.getSeconds();
+    hr=30*h + m/2;
+    mr=6*m  + s/10;
+    sr=6*s;
+    hour.style.transform=`rotate(${hr}deg)`;
+    min.style.transform=`rotate(${mr}deg)`;
+    sec.style.transform=`rotate(${sr}deg)`;
+}, 1000);
+    </script>
+</body>
+</html>
